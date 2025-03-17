@@ -32,7 +32,7 @@
 
     <!-- ✅ Dark Theme -->
     <style name="Theme.OthelloDarren.Dark" parent="Theme.OthelloDarren">
-        <item name="board_background">@color/board_background_dark</item>
+        <item name="board_background">#000000</item>
         <item name="tile_black">@color/tile_black_dark</item>
         <item name="tile_white">@color/tile_white_dark</item>
         <item name="tile_border">@color/tile_border</item>
@@ -43,9 +43,9 @@
     <!-- ✅ Earth Theme -->
     <style name="Theme.OthelloDarren.Earth" parent="Theme.OthelloDarren">
         <item name="board_background">@color/board_background_earth</item>
-        <item name="tile_black">@color/tile_black_earth</item>
-        <item name="tile_white">@color/tile_white_earth</item>
-        <item name="tile_border">@color/tile_border</item>
+        <item name="tile_black">#000000</item>
+        <item name="tile_white">#FFFFFF</item>
+        <item name="tile_border">#FFCEA3</item>
         <item name="panel_background">@color/player_panel_earth</item>  <!-- ✅ Ensure it's here -->
         <item name="text_color">@android:color/white</item>
     </style>

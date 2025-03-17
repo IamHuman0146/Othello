@@ -24,7 +24,7 @@
     <color name="board_background_dark">#000000</color>
     <color name="tile_black_dark">#121212</color>
     <color name="tile_white_dark">#FFFFFF</color>
-    <color name="player_panel_dark">#1E1E1E</color>
+    <color name="player_panel_dark">#450281</color>
 
     <!-- ✅ Earth Theme Colors -->
     <color name="othello_earth">#5D4037</color>
