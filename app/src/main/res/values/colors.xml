@@ -1,22 +1,41 @@
 <resources>
+    <!-- ✅ Green Theme Colors -->
     <color name="othello_green">#006400</color>
     <color name="colorPrimaryDark">#003300</color>
     <color name="colorAccent">#4CAF50</color>
+    <color name="board_background_green">#004D23</color>
+    <color name="tile_black_green">#000000</color>
+    <color name="tile_white_green">#FFFFFF</color>
+    <color name="player_panel_green">#008000</color>
 
+    <!-- ✅ Blue-Gray Theme Colors -->
     <color name="othello_blue_gray">#37474F</color>
     <color name="colorPrimaryDarkBlueGray">#263238</color>
     <color name="colorAccentBlueGray">#546E7A</color>
+    <color name="board_background_blue_gray">#263238</color>
+    <color name="tile_black_blue_gray">#212121</color>
+    <color name="tile_white_blue_gray">#E0E0E0</color>
+    <color name="player_panel_blue_gray">#455A64</color>
 
+    <!-- ✅ Dark Mode Colors -->
     <color name="othello_dark">#121212</color>
     <color name="colorPrimaryDarkDarkMode">#000000</color>
-    <color name="colorAccentDarkMode">#BB86FC</color>
+    <color name="colorAccentDarkMode">#FFFFFF</color>
+    <color name="board_background_dark">#000000</color>
+    <color name="tile_black_dark">#121212</color>
+    <color name="tile_white_dark">#FFFFFF</color>
+    <color name="player_panel_dark">#1E1E1E</color>
 
+    <!-- ✅ Earth Theme Colors -->
     <color name="othello_earth">#5D4037</color>
     <color name="colorPrimaryDarkEarth">#3E2723</color>
     <color name="colorAccentEarth">#A1887F</color>
+    <color name="board_background_earth">#5D4037</color>
+    <color name="tile_black_earth">#3E2723</color>
+    <color name="tile_white_earth">#D7CCC8</color>
+    <color name="player_panel_earth">#6D4C41</color>
 
-    <color name="hint_color">#80FFFFFF</color>
+    <!-- ✅ Default Board Background & Tile Border -->
     <color name="tile_border">#004D40</color>
-
-
+    <color name="hint_color">#80FFFFFF</color>
 </resources>

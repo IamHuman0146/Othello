@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/othello_green"
+    android:background="?attr/board_background"
+
     android:padding="10dp">
     <!-- Back Button -->
     <RelativeLayout
@@ -134,7 +135,7 @@
             android:layout_height="wrap_content"
             android:columnCount="8"
             android:rowCount="8"
-            android:background="@color/othello_green"
+            android:background="?attr/board_background"
             android:layout_gravity="center"
             android:padding="4dp"/>
 

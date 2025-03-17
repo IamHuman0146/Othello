@@ -1,0 +1,10 @@
+<resources>
+    <declare-styleable name="CustomTheme">
+        <attr name="board_background" format="color"/>
+        <attr name="tile_black" format="color"/>
+        <attr name="tile_white" format="color"/>
+        <attr name="tile_border" format="color"/>
+        <attr name="panel_background" format="color"/>
+        <attr name="text_color" format="color"/>  <!-- ✅ Ensure text color is defined -->
+    </declare-styleable>
+</resources>

@@ -1,9 +1,63 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.OthelloDarren" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <!-- ✅ Base Theme -->
+    <style name="Theme.OthelloDarren" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="board_background">@color/board_background_green</item>
+        <item name="tile_black">@color/tile_black_green</item>
+        <item name="tile_white">@color/tile_white_green</item>
+        <item name="tile_border">@color/tile_border</item>
+        <item name="panel_background">@color/player_panel_green</item>  <!-- ✅ Added -->
+        <item name="text_color">@android:color/white</item>
     </style>
 
-    <style name="Theme.OthelloDarren" parent="Base.Theme.OthelloDarren" />
+    <!-- ✅ Green Theme -->
+    <style name="Theme.OthelloDarren.Green" parent="Theme.OthelloDarren">
+        <item name="board_background">@color/board_background_green</item>
+        <item name="tile_black">@color/tile_black_green</item>
+        <item name="tile_white">@color/tile_white_green</item>
+        <item name="tile_border">@color/tile_border</item>
+        <item name="panel_background">@color/player_panel_green</item>  <!-- ✅ Ensure it's here -->
+        <item name="text_color">@android:color/white</item>
+    </style>
+
+    <!-- ✅ Blue-Gray Theme -->
+    <style name="Theme.OthelloDarren.BlueGray" parent="Theme.OthelloDarren">
+        <item name="board_background">@color/board_background_blue_gray</item>
+        <item name="tile_black">@color/tile_black_blue_gray</item>
+        <item name="tile_white">@color/tile_white_blue_gray</item>
+        <item name="tile_border">@color/tile_border</item>
+        <item name="panel_background">@color/player_panel_blue_gray</item>  <!-- ✅ Ensure it's here -->
+        <item name="text_color">@android:color/white</item>
+    </style>
+
+    <!-- ✅ Dark Theme -->
+    <style name="Theme.OthelloDarren.Dark" parent="Theme.OthelloDarren">
+        <item name="board_background">@color/board_background_dark</item>
+        <item name="tile_black">@color/tile_black_dark</item>
+        <item name="tile_white">@color/tile_white_dark</item>
+        <item name="tile_border">@color/tile_border</item>
+        <item name="panel_background">@color/player_panel_dark</item>  <!-- ✅ Ensure it's here -->
+        <item name="text_color">@android:color/white</item>
+    </style>
+
+    <!-- ✅ Earth Theme -->
+    <style name="Theme.OthelloDarren.Earth" parent="Theme.OthelloDarren">
+        <item name="board_background">@color/board_background_earth</item>
+        <item name="tile_black">@color/tile_black_earth</item>
+        <item name="tile_white">@color/tile_white_earth</item>
+        <item name="tile_border">@color/tile_border</item>
+        <item name="panel_background">@color/player_panel_earth</item>  <!-- ✅ Ensure it's here -->
+        <item name="text_color">@android:color/white</item>
+    </style>
+    <!-- ✅ Theme Button Style -->
+    <style name="ThemeButton" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">?attr/panel_background</item>
+        <item name="android:textColor">?attr/text_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
 </resources>

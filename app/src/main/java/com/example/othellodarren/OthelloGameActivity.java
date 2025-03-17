@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import android.util.TypedValue;
+
 
 public class OthelloGameActivity extends AppCompatActivity {
 
@@ -34,10 +36,10 @@ public class OthelloGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ThemeUtils.applyTheme(this); // ✅ Apply selected theme
         setContentView(R.layout.activity_othello_game);
 
-        game = new OthelloGame();
-
+        // ✅ Initialize views
         boardGrid = findViewById(R.id.boardGrid);
         player1Tiles = findViewById(R.id.player1Tiles);
         player2Tiles = findViewById(R.id.player2Tiles);
@@ -58,11 +60,19 @@ public class OthelloGameActivity extends AppCompatActivity {
         showHints = true;
         notificationContainer.setVisibility(View.GONE);
 
+        // ✅ Apply board background dynamically
+        TypedValue typedValue = new TypedValue();
+        getTheme().resolveAttribute(R.attr.board_background, typedValue, true);
+        int boardBackgroundColor = typedValue.data;
+
+        View rootView = findViewById(android.R.id.content);
+        rootView.setBackgroundColor(boardBackgroundColor);
+        boardGrid.setBackgroundColor(boardBackgroundColor);
+
         pauseButton.setOnClickListener(v -> togglePause());
         findViewById(R.id.rematchButton).setOnClickListener(v -> restartGame());
         findViewById(R.id.backButton).setOnClickListener(v -> finish());
 
-        // Add click listener for the back to menu button
         backToMenuButton.setOnClickListener(v -> showExitConfirmationDialog());
 
         hintSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -70,11 +80,17 @@ public class OthelloGameActivity extends AppCompatActivity {
             updateBoard();
         });
 
+        // ✅ Initialize game and UI
+        game = new OthelloGame();
         setupBoard();
         updateBoard();
         updatePlayerInfo();
         startGameTimer();
     }
+
+
+
+
 
     private void showExitConfirmationDialog() {
         // Pause the game while dialog is showing
@@ -106,8 +122,14 @@ public class OthelloGameActivity extends AppCompatActivity {
     }
 
     private void setupBoard() {
-        int screenSize = Math.min(getResources().getDisplayMetrics().widthPixels, getResources().getDisplayMetrics().heightPixels) - 100;
+        int screenSize = Math.min(getResources().getDisplayMetrics().widthPixels,
+                getResources().getDisplayMetrics().heightPixels) - 100;
         int cellSize = screenSize / BOARD_SIZE;
+
+        // ✅ Get board border color dynamically from the theme
+        TypedValue typedValue = new TypedValue();
+        getTheme().resolveAttribute(R.attr.tile_border, typedValue, true);
+        int borderColor = typedValue.data;
 
         for (int row = 0; row < BOARD_SIZE; row++) {
             for (int col = 0; col < BOARD_SIZE; col++) {
@@ -117,14 +139,13 @@ public class OthelloGameActivity extends AppCompatActivity {
                 params.height = cellSize;
                 params.setMargins(2, 2, 2, 2);
                 cell.setLayoutParams(params);
-                cell.setBackgroundColor(ContextCompat.getColor(this, R.color.tile_border));
+                cell.setBackgroundColor(borderColor);
                 cell.setImageResource(R.drawable.circle_empty);
 
                 final int finalRow = row, finalCol = col;
                 cell.setOnClickListener(v -> {
                     if (!isPaused && game.makeMove(finalRow, finalCol)) {
-                        // No animation for tile placement
-                        updateBoard();
+                        updateBoard(); // ✅ Apply new theme colors dynamically
                         updatePlayerInfo();
                         resetTimer();
                     }
@@ -136,29 +157,56 @@ public class OthelloGameActivity extends AppCompatActivity {
         }
     }
 
+
     private void updateBoard() {
         char[][] board = game.getBoard();
         boolean[][] validMoves = game.getValidMoves();
+
+        // ✅ Get tile colors dynamically from theme
+        TypedValue typedValue = new TypedValue();
+        getTheme().resolveAttribute(R.attr.tile_black, typedValue, true);
+        int blackTileColor = typedValue.data;
+
+        getTheme().resolveAttribute(R.attr.tile_white, typedValue, true);
+        int whiteTileColor = typedValue.data;
+
+        getTheme().resolveAttribute(R.attr.tile_border, typedValue, true);
+        int borderColor = typedValue.data;
 
         for (int row = 0; row < BOARD_SIZE; row++) {
             for (int col = 0; col < BOARD_SIZE; col++) {
                 if (board[row][col] == 'X') {
                     boardCells[row][col].setImageResource(R.drawable.circle_black);
+                    boardCells[row][col].setColorFilter(blackTileColor); // ✅ Apply dynamic theme color
                 } else if (board[row][col] == 'O') {
                     boardCells[row][col].setImageResource(R.drawable.circle_white);
+                    boardCells[row][col].setColorFilter(whiteTileColor); // ✅ Apply dynamic theme color
                 } else if (showHints && validMoves[row][col]) {
                     boardCells[row][col].setImageResource(R.drawable.circle_hint);
-                    // No animation for hints
                 } else {
                     boardCells[row][col].setImageResource(R.drawable.circle_empty);
                 }
+                boardCells[row][col].setBackgroundColor(borderColor); // ✅ Ensure border color updates dynamically
             }
         }
     }
 
+
+
+
+
     private void updatePlayerInfo() {
-        player1Tiles.setText(game.getPlayer1Tiles() + " TILES");
-        player2Tiles.setText(game.getPlayer2Tiles() + " TILES");
+        player1Tiles.setText(getString(R.string.player_tiles, game.getPlayer1Tiles()));
+        player2Tiles.setText(getString(R.string.player_tiles, game.getPlayer2Tiles()));
+
+        // ✅ Get primary theme color dynamically
+        TypedValue typedValue = new TypedValue();
+        getTheme().resolveAttribute(R.attr.panel_background, typedValue, true);
+        int panelColor = typedValue.data;
+
+        // ✅ Apply the theme color to player panels
+        player1Panel.setBackgroundColor(panelColor);
+        player2Panel.setBackgroundColor(panelColor);
 
         if (game.getCurrentPlayer() == 'X') {
             player1Panel.setAlpha(1.0f);
@@ -168,23 +216,10 @@ public class OthelloGameActivity extends AppCompatActivity {
             player2Panel.setAlpha(1.0f);
         } else {
             showGameOverScreen();
-            return;
-        }
-
-        if (!game.hasValidMoves()) {
-            notificationContainer.setVisibility(View.VISIBLE);
-            notificationText.setText("No valid moves! Skipping turn...");
-            notificationContainer.bringToFront();
-
-            new Handler().postDelayed(() -> {
-                skipTurn();
-
-                new Handler().postDelayed(() -> {
-                    notificationContainer.setVisibility(View.GONE);
-                }, 500);
-            }, 2000);
         }
     }
+
+
 
     private void skipTurn() {
         game.switchTurn();
