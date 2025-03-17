@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">OthelloDarren</string>
+    <string name="player_tiles_format">%d TILES</string>
+    <string name="no_valid_moves">No valid moves! Skipping turn…</string>
+    <string name="exit_game_title">Exit Game</string>
+    <string name="exit_game_message">Are you sure you want</string>
+</resources>

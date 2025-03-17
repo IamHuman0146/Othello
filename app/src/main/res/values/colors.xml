@@ -1,0 +1,22 @@
+<resources>
+    <color name="othello_green">#006400</color>
+    <color name="colorPrimaryDark">#003300</color>
+    <color name="colorAccent">#4CAF50</color>
+
+    <color name="othello_blue_gray">#37474F</color>
+    <color name="colorPrimaryDarkBlueGray">#263238</color>
+    <color name="colorAccentBlueGray">#546E7A</color>
+
+    <color name="othello_dark">#121212</color>
+    <color name="colorPrimaryDarkDarkMode">#000000</color>
+    <color name="colorAccentDarkMode">#BB86FC</color>
+
+    <color name="othello_earth">#5D4037</color>
+    <color name="colorPrimaryDarkEarth">#3E2723</color>
+    <color name="colorAccentEarth">#A1887F</color>
+
+    <color name="hint_color">#80FFFFFF</color>
+    <color name="tile_border">#004D40</color>
+
+
+</resources>

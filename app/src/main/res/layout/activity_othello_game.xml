@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/othello_green"
+    android:padding="10dp">
+    <!-- Back Button -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:id="@+id/backToMenuButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Back to Menu"
+            android:padding="5dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+    </RelativeLayout>
+
+    <!-- Top Row: Player Info -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="10dp">
+
+        <!-- Player 1 Panel (BLACK) -->
+        <LinearLayout
+            android:id="@+id/player1Panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/circle_black" />
+
+            <TextView
+                android:id="@+id/player1Tiles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 TILES"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:text="PLAYER 1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- Timer & Pause -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/gameTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:30"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:padding="5dp"/>
+
+            <!-- Pause Icon -->
+            <ImageView
+                android:id="@+id/pauseButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_media_pause"
+                android:contentDescription="Pause Game"/>
+        </LinearLayout>
+
+        <!-- Player 2 Panel (WHITE) -->
+        <LinearLayout
+            android:id="@+id/player2Panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/circle_white" />
+
+            <TextView
+                android:id="@+id/player2Tiles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 TILES"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:text="PLAYER 2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Othello Board & Overlays -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <!-- Othello Board -->
+        <GridLayout
+            android:id="@+id/boardGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="8"
+            android:rowCount="8"
+            android:background="@color/othello_green"
+            android:layout_gravity="center"
+            android:padding="4dp"/>
+
+        <!-- PAUSED Screen -->
+        <TextView
+            android:id="@+id/pausedText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="PAUSED"
+            android:textSize="36sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="#80000000"/>
+
+        <!-- Game Over Screen -->
+        <LinearLayout
+            android:id="@+id/gameOverScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="#80000000"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/gameOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GAME OVER"
+                android:textSize="36sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+            <Button
+                android:id="@+id/rematchButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Rematch"
+                android:textSize="18sp"
+                android:backgroundTint="@android:color/white"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Back to Menu"
+                android:textSize="18sp"
+                android:backgroundTint="@android:color/white"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <!-- Notification Container -->
+        <LinearLayout
+            android:id="@+id/notificationContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_gravity="bottom"
+            android:background="#80000000"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/notificationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Hint Toggle -->
+    <LinearLayout
+        android:id="@+id/hintContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Hints"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginRight="10dp"/>
+
+        <Switch
+            android:id="@+id/hintSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

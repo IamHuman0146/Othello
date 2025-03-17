@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/othello_green">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Theme"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:paddingBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green Theme"/>
+
+    <Button
+        android:id="@+id/btnBlueGray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blue-Gray Theme"/>
+
+    <Button
+        android:id="@+id/btnDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dark Mode"/>
+
+    <Button
+        android:id="@+id/btnEarth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Earth Brown Theme"/>
+</LinearLayout>

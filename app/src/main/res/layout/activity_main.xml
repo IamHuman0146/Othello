@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/othello_green">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OTHELLO"
+        android:textSize="36sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"/>
+
+    <Button
+        android:id="@+id/btnVsAI"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Play vs AI"
+        android:textSize="18sp"
+        android:backgroundTint="@android:color/white"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnVsPlayer"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="1v1 Mode"
+        android:textSize="18sp"
+        android:backgroundTint="@android:color/white"
+        android:textColor="@android:color/black"/>
+
+    <Button
+        android:id="@+id/btnChangeTheme"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Change Theme"
+        android:textSize="18sp"
+        android:backgroundTint="@android:color/white"
+        android:textColor="@android:color/black"/>
+
+</LinearLayout>
