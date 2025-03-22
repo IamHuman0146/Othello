@@ -14,6 +14,26 @@ public class OthelloGame {
         countTiles();
     }
 
+    //greedy
+    public int[] getBestAIMove() {
+        int bestRow = -1, bestCol = -1;
+        int maxFlips = 0;
+
+        for (int row = 0; row < BOARD_SIZE; row++) {
+            for (int col = 0; col < BOARD_SIZE; col++) {
+                if (isValidMove(row, col)) {
+                    int flips = calculateGained(row, col, currentPlayer, (currentPlayer == player1) ? player2 : player1);
+                    if (flips > maxFlips) {
+                        maxFlips = flips;
+                        bestRow = row;
+                        bestCol = col;
+                    }
+                }
+            }
+        }
+
+        return new int[] {bestRow, bestCol};
+    }
     public void resetBoard() {
         for (int row = 0; row < BOARD_SIZE; row++) {
             for (int col = 0; col < BOARD_SIZE; col++) {
@@ -86,6 +106,7 @@ public class OthelloGame {
     }
 
     public void switchTurn() {
+
         currentPlayer = (currentPlayer == player1) ? player2 : player1;
 
 
@@ -100,6 +121,7 @@ public class OthelloGame {
 
         countTiles();
     }
+
 
 
     private int calculateGained(int row, int col, char turn, char oppose) {

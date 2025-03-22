@@ -41,6 +41,13 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="8dp">
+            <TextView
+                android:id="@+id/player1Label"
+                android:text="PLAYER 1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
 
             <ImageView
                 android:layout_width="50dp"
@@ -98,6 +105,13 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="8dp">
+            <TextView
+                android:id="@+id/player2Label"
+                android:text="PLAYER 2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
 
             <ImageView
                 android:layout_width="50dp"

@@ -6,6 +6,21 @@
     android:orientation="vertical"
     android:background="?attr/board_background">
 
+
+    <Button
+        android:id="@+id/btnBlack"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Play as Black"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnWhite"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Play as White"
+        android:visibility="gone"/>
+
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
@@ -43,5 +58,4 @@
         android:textSize="18sp"
         android:backgroundTint="@android:color/white"
         android:textColor="@android:color/black"/>
-
 </LinearLayout>

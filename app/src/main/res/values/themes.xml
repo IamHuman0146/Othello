@@ -6,17 +6,18 @@
         <item name="tile_black">@color/tile_black_green</item>
         <item name="tile_white">@color/tile_white_green</item>
         <item name="tile_border">@color/tile_border</item>
-        <item name="panel_background">@color/player_panel_green</item>  <!-- ✅ Added -->
+        <item name="panel_background">@color/player_panel_green</item>
         <item name="text_color">@android:color/white</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <!-- ✅ Green Theme -->
     <style name="Theme.OthelloDarren.Green" parent="Theme.OthelloDarren">
-        <item name="board_background">@color/board_background_green</item>
+        <item name="board_background">#3D7C4A</item>
         <item name="tile_black">@color/tile_black_green</item>
         <item name="tile_white">@color/tile_white_green</item>
-        <item name="tile_border">@color/tile_border</item>
-        <item name="panel_background">@color/player_panel_green</item>  <!-- ✅ Ensure it's here -->
+        <item name="tile_border">#E8C7A4</item>
+        <item name="panel_background">#55AC55</item>
         <item name="text_color">@android:color/white</item>
     </style>
 
@@ -25,18 +26,18 @@
         <item name="board_background">@color/board_background_blue_gray</item>
         <item name="tile_black">@color/tile_black_blue_gray</item>
         <item name="tile_white">@color/tile_white_blue_gray</item>
-        <item name="tile_border">@color/tile_border</item>
-        <item name="panel_background">@color/player_panel_blue_gray</item>  <!-- ✅ Ensure it's here -->
+        <item name="tile_border">#00474D</item>
+        <item name="panel_background">@color/player_panel_blue_gray</item>
         <item name="text_color">@android:color/white</item>
     </style>
 
     <!-- ✅ Dark Theme -->
     <style name="Theme.OthelloDarren.Dark" parent="Theme.OthelloDarren">
-        <item name="board_background">#000000</item>
+        <item name="board_background">#222222</item>
         <item name="tile_black">@color/tile_black_dark</item>
         <item name="tile_white">@color/tile_white_dark</item>
-        <item name="tile_border">@color/tile_border</item>
-        <item name="panel_background">@color/player_panel_dark</item>  <!-- ✅ Ensure it's here -->
+        <item name="tile_border">#41004D</item>
+        <item name="panel_background">@color/player_panel_dark</item>
         <item name="text_color">@android:color/white</item>
     </style>
 
@@ -46,7 +47,7 @@
         <item name="tile_black">#000000</item>
         <item name="tile_white">#FFFFFF</item>
         <item name="tile_border">#FFCEA3</item>
-        <item name="panel_background">@color/player_panel_earth</item>  <!-- ✅ Ensure it's here -->
+        <item name="panel_background">@color/player_panel_earth</item>
         <item name="text_color">@android:color/white</item>
     </style>
     <!-- ✅ Theme Button Style -->

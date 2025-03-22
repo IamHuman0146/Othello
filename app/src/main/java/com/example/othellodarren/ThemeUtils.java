@@ -12,7 +12,7 @@ public class ThemeUtils {
 
     public static void applyTheme(Activity activity) {
         SharedPreferences prefs = activity.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        String themeName = prefs.getString(KEY_THEME, "Green"); // Default theme is Green
+        String themeName = prefs.getString(KEY_THEME, "Green");
 
         int themeResId;
         int boardBackgroundResId;
@@ -36,10 +36,10 @@ public class ThemeUtils {
                 break;
         }
 
-        // ✅ Apply the selected theme
+
         activity.setTheme(themeResId);
 
-        // ✅ Apply the background color dynamically
+
         View rootView = activity.findViewById(android.R.id.content);
         if (rootView != null) {
             rootView.setBackgroundColor(ContextCompat.getColor(activity, boardBackgroundResId));
